@@ -6,7 +6,7 @@ int Diff(int a, int b);
 int Prod(int a, int b);
 double Quote(int a, int b);
 long long int Factorial(int n);
-double Power(double a, int b);
+double Power(double a, int n);
 
 //#define CALC
 //#define FACTORIAL
@@ -24,26 +24,24 @@ void main()
 	cout << a << "-" << b << "=" << Diff(a, b) << endl;
 	cout << a << "*" << b << "=" << Prod(a, b) << endl;
 	cout << a << "/" << b << "=" << Quote(a, b) << endl;
+
 #endif // CALC
+
 #ifdef FACTORIAL
-
-
 	int n;
 	cout << "¬ведите число дл€ вычислени€ фаториала: "; cin >> n;
-	cout << Factorial << endl;
+	cout << Factorial(n) << endl;
 #endif // FACTORIAL
+
 #ifdef POWER
-
-
-
 	int a;//основание степени
 	int n;//показатель степени
 	cout << "¬ведите основание степени: "; cin >> a;
 	cout << "¬ведите показатель степени: "; cin >> n;
-	cout << a << " ^ " << n << " - " << Power(a, n) << endl;
+	cout << a << " ^ " << n << " = " << Power(a, n) << endl;
 	system("PAUSE");
 	main();
-#endif // POWER
+#endif //POWER
 
 }
 int Sum(int a, int b) //–еализаци€ функции(определение функции-function definition)
@@ -75,18 +73,19 @@ long long int Factorial(int n)
 		}
 		return f;
 }
+
 #endif // FACTORIAL
 double Power(double a, int b)
 {
 	double N = 1;
-if (n < 0)
-{
-	a - 1 / a;
-	n = -n;
-}
-for (int i = 0; i < n; i++)
-{
-	N *= a;
-}
-return N;
+	if (n < 0)
+	{
+		a - 1 / a;
+		n = -n;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		N *= a;
+	}
+	return N;
 }
